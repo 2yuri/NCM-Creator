@@ -1,0 +1,40 @@
+body {
+  background-color: #dddddd;
+  display: flex;
+  height: 90vh;
+  width: 95vw;
+  justify-content: center;
+  align-items: center;
+}
+
+section h2{
+  display: flex;
+  border: 20px;
+}
+
+section input{
+  height: 20px;
+  border-radius: 5px;
+  border-color: black;
+  text-align: center;
+}
+
+section button{
+  height: 26.5px;
+  border-radius: 5px;
+  border-color: black;
+  text-align: center;
+  color: black;
+}
+section button:hover{
+  border-color: black;
+  background-color: black;
+  text-align: center;
+  color: white;
+  transform: rotate(360deg);
+  transition: all 0.2s;
+
+}
+
+
+

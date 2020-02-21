@@ -2,7 +2,7 @@
   "name": "ncm-creator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
     "test": "nodemon server.js"
   },
