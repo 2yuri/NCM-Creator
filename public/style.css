@@ -31,8 +31,6 @@ section button:hover{
   background-color: black;
   text-align: center;
   color: white;
-  transform: rotate(360deg);
-  transition: all 0.2s;
 
 }
 

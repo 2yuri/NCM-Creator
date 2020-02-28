@@ -14,8 +14,8 @@ const db = new Pool({
   user: 'postgres',
   password: 'postgres',
   host: 'localhost',
-  port: 5432,
-  database: 'testing'
+  port: 5434,
+  database: 'manutencaoarquivos'
 })
 
 
@@ -56,11 +56,7 @@ server.post("/", function(req, res) {
 
   //push - coloca valor dentro do db
   const query = 
-  `
-  INSERT INTO public.tipi (tipo,codigoncm,descricao,aliquota,embalagemtributavelex,ex,codigopai) 
-  VALUES ('05',$1,$2,NULL,NULL,1,NULL);
-
-  INSERT INTO ibpt (ncm,ex,tipo,uf,descricao,federalnac,federalimp,estadual,municipal,iniciovigencia,fimvigencia,chave,versao,fonte,datacriacao,dataatualizacao,novo) 
+  `  INSERT INTO ibpt (ncm,ex,tipo,uf,descricao,federalnac,federalimp,estadual,municipal,iniciovigencia,fimvigencia,chave,versao,fonte,datacriacao,dataatualizacao,novo) 
   VALUES ($1,0,0,'AC', $2,4.2,9.34,7,0,'2020-02-01','2020-04-30','6A098E','20.1.A','IBPT/empresometro.com.br','2020-02-03',NULL,false),
           ($1,0,0,'AL',$2,4.2,8.16,0,0,'2020-02-01','2020-04-30','6A098E','20.1.A','IBPT/empresometro.com.br','2020-02-03',NULL,false),
           ($1,0,0,'AM',$2,4.2,8.77,0,0,'2020-02-01','2020-04-30','6A098E','20.1.A','IBPT/empresometro.com.br','2020-02-03',NULL,false),
