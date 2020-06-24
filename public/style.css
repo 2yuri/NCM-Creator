@@ -1,38 +1,62 @@
+
 body {
   background-color: #dddddd;
+
+  
+  max-height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+
   display: flex;
-  height: 90vh;
-  width: 95vw;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
   align-items: center;
 }
 
-section h2{
-  display: flex;
-  border: 20px;
-}
+form select {
 
-section input{
-  height: 20px;
-  border-radius: 5px;
-  border-color: black;
+  padding: 10px;
+  width: 400px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
   text-align: center;
 }
 
-section button{
-  height: 26.5px;
-  border-radius: 5px;
-  border-color: black;
+form input {
+  padding: 10px;
+  width: 400px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
   text-align: center;
-  color: black;
 }
-section button:hover{
-  border-color: black;
+
+form button {
+  padding: 12px;
+  width: 400px;
+  margin-top: 10px;
+  border: none;
   background-color: black;
-  text-align: center;
   color: white;
-
+  cursor: pointer;
+  border-radius: 3px;
 }
 
+form button:hover {
+  background-color: rgb(51, 51, 51);
+  transition: all 0.1s;
+  transform: translateY(-2px)
 
+}
 

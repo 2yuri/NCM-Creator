@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Create Ncm</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <h2>Digite aqui o NCM e a DESCRIÇÃO</h2>
+  <p>Na IBPT o tipo é <strong>0</strong> e não 4</p>
+  <form action="/" method="POST">
+    <input type="text" name="codigo_ncm" placeholder="Digite o codigo do NCM">
+    <input type="text" name="desc_ncm" placeholder="Digite a descrição do NCM">
+    <input type="number" name="tipo_ncm" placeholder="Digite o tipo do NCM">
+    <select name="table" id="table">
+      <option value="tipi">TIPI</option>
+      <option value="ibpt">IBPT</option>
+    </select>
+    <button>Confirmar</button>
+  </form>
+
+
+
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
