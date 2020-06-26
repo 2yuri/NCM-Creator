@@ -18,7 +18,7 @@ const db = new Pool({
   password: 'postgres',
   host: 'localhost',
   port: 5436,
-  database: 'ncmzinho'
+  database: 'manutencaoarquivos'
 })
 
 
@@ -48,19 +48,13 @@ server.post("/", function (req, res) {
 
   }
 
-  if (codigo_ncm != "" || desc_ncm != "" || tipo_ncm != "" || req.body.table == 'tipi') {
-
-
-    //push - coloca valor dentro do db
+  if (req.body.table == 'tipi') {
     const query = `
     INSERT INTO public.tipi(
        tipo, codigoncm, descricao, aliquota, embalagemtributavelex, ex, codigopai)
       VALUES ( $3, $1, $2, NULL, NULL, 0, NULL);
 
     `
-
-
-
     const values = [codigo_ncm, desc_ncm, tipo_ncm]
 
     db.query(query, values, function (err) {
@@ -70,9 +64,9 @@ server.post("/", function (req, res) {
       //fluxo ideal
       return res.redirect("/")
     })
+  }
 
-
-  } else {
+  if (req.body.table == 'ibpt') {
     const query = `
     INSERT INTO ibpt (ncm,ex,tipo,uf,descricao,federalnac,federalimp,estadual,municipal,iniciovigencia,fimvigencia,chave,versao,fonte,datacriacao,dataatualizacao,novo) 
     VALUES ($1,0,$3,'AC', $2,4.2,9.34,7,0,'2020-05-01','2020-07-31','6A098E','20.1.B','IBPT/empresometro.com.br','2020-05-04',NULL,false),
@@ -104,9 +98,6 @@ server.post("/", function (req, res) {
             ($1,0,$3,'TO',$2,4.2,8.72,0,0,'2020-05-01','2020-07-31','6A098E','20.1.B','IBPT/empresometro.com.br','2020-05-04',NULL,false)
 
     `
-
-
-
     const values = [codigo_ncm, desc_ncm, tipo_ncm]
 
     db.query(query, values, function (err) {
@@ -116,8 +107,9 @@ server.post("/", function (req, res) {
       //fluxo ideal
       return res.redirect("/")
     })
-
   }
+
+
 
 
 
